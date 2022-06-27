@@ -14,4 +14,10 @@ public class MainController {
 
     }
 
+    @GetMapping("assets")
+    public String assets(){
+        return "assets";
+
+    }
+
 }
