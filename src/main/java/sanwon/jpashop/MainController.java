@@ -14,6 +14,13 @@ public class MainController {
 
     }
 
+    @GetMapping("mainTwo")
+    public String main(Model model){
+        model.addAttribute("data","메인화면2");
+        return "mainTwo";
+
+    }
+
     @GetMapping("assets")
     public String assets(){
         return "assets";
