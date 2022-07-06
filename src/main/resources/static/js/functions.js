@@ -42,7 +42,7 @@ $( document ).ready(function() {
           curActive = $this.parent().find('.is-active'),
           curPos = $this.parent().children().index(curActive),
           nextPos = $this.parent().children().index($this),
-          lastItem = $(this).parent().children().length - 1;
+          lastItem = $(this).parent().children().length;
 
       updateNavs(nextPos);
       updateContent(curPos, nextPos, lastItem);
@@ -55,7 +55,7 @@ $( document ).ready(function() {
 
     var curActive = $('.side-nav').find('.is-active'),
         curPos = $('.side-nav').children().index(curActive),
-        lastItem = $('.side-nav').children().length - 1,
+        lastItem = $('.side-nav').children().length,
         nextPos = lastItem;
 
     updateNavs(lastItem);
@@ -87,7 +87,7 @@ $( document ).ready(function() {
 
     var curActive = $('.side-nav').find('.is-active'),
         curPos = $('.side-nav').children().index(curActive),
-        lastItem = $('.side-nav').children().length - 1,
+        lastItem = $('.side-nav').children().length-1,
         nextPos = 0;
 
     if (param.type === "swipeup" || param.keyCode === 40 || param > 0) {
@@ -142,11 +142,18 @@ $( document ).ready(function() {
       $('.main-content').children().eq(curPos).children().addClass('section--prev');
     }
 
-    if (nextPos !== 0 && nextPos !== lastItem) {
+    if (nextPos !== 0 && nextPos !== lastItem+1) {
       $('.header--cta').addClass('is-active');
     }
     else {
       $('.header--cta').removeClass('is-active');
+    }
+
+    if (nextPos === 0){
+      $('.header--cta--b').addClass('is-active');
+    }
+    else {
+      $('.header--cta--b').removeClass('is-active');
     }
 
   }
