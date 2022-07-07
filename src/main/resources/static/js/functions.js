@@ -91,8 +91,12 @@ $( document ).ready(function() {
         nextPos = 0;
 
     if (param.type === "swipeup" || param.keyCode === 40 || param > 0) {
-      if (curPos !== lastItem) {
+      if (curPos !== lastItem && curPos !== 0) {
         nextPos = curPos + 1;
+        updateNavs(nextPos);
+        updateContent(curPos, nextPos, lastItem);
+      }else if ( curPos === 0){
+        nextPos = curPos + 2;
         updateNavs(nextPos);
         updateContent(curPos, nextPos, lastItem);
       }
@@ -102,8 +106,12 @@ $( document ).ready(function() {
       }
     }
     else if (param.type === "swipedown" || param.keyCode === 38 || param < 0){
-      if (curPos !== 0){
+      if (curPos !== 0 && curPos !== 2){
         nextPos = curPos - 1;
+        updateNavs(nextPos);
+        updateContent(curPos, nextPos, lastItem);
+      }else if ( curPos === 2){
+        nextPos = curPos - 2;
         updateNavs(nextPos);
         updateContent(curPos, nextPos, lastItem);
       }
