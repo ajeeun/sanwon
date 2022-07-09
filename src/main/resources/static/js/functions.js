@@ -14,6 +14,7 @@ setInterval(function(){
 
 $( document ).ready(function() {
 
+  $('.side-nav li').attr('style','color:black');
   // DOMMouseScroll included for firefox support
   var canScroll = true,
       scrollController = null;
@@ -168,9 +169,11 @@ $( document ).ready(function() {
 
     if (nextPos === 0){
       $('.header--cta--b').addClass('is-active');
+      $('.side-nav li').attr('style','color:black');
     }
     else {
       $('.header--cta--b').removeClass('is-active');
+      $('.side-nav li').removeAttr('style','color:black');
     }
 
   }

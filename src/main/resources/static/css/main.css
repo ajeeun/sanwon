@@ -628,73 +628,75 @@ li {
 
 .side-nav > li {
     position: relative;
-    top: -5px;
-    color: #fff;
-    font-size: 6px;
+    top: 3px;
+    /*left: 10px;*/
+    color: silver;
+    font-size: 14px;
+    font-weight: 300;
     cursor: pointer
 }
 
-.side-nav > li span {
-    position: relative;
-    top: 3px;
-    left: 10px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 300;
-    opacity: 0;
-    /*visibility: hidden*/
-}
+/*.side-nav > li span {*/
+/*    position: relative;*/
+/*    top: 3px;*/
+/*    left: 10px;*/
+/*    color: #1769ff;*/
+/*    font-size: 14px;*/
+/*    font-weight: 300;*/
+/*    opacity: 0;*/
+/*    !*visibility: hidden*!*/
+/*}*/
 
-.side-nav > li::before {
-    /*position: absolute;*/
-    top: 3px;
-    left: 10px;
-    color: silver;
-    font-size: 14px;
-    font-weight: 300
-}
+/*.side-nav > li::before {*/
+/*    !*position: absolute;*!*/
+/*    top: 3px;*/
+/*    left: 10px;*/
+/*    color: silver;*/
+/*    font-size: 14px;*/
+/*    font-weight: 300*/
+/*}*/
 
-.side-nav li:nth-child(1)::before {
-    /*content: "Home"*/
-}
+/*.side-nav li:nth-child(1)::before {*/
+/*    !*content: "Home"*!*/
+/*}*/
 
-.side-nav li:nth-child(2)::before {
-    content: "Works"
-}
+/*.side-nav li:nth-child(2)::before {*/
+/*    content: "Works"*/
+/*}*/
 
-.side-nav li:nth-child(3)::before {
-    content: "About"
-}
+/*.side-nav li:nth-child(3)::before {*/
+/*    content: "About"*/
+/*}*/
 
-.side-nav li:nth-child(4)::before {
-    content: "News"
-}
+/*.side-nav li:nth-child(4)::before {*/
+/*    content: "News"*/
+/*}*/
 
-.side-nav li:nth-child(5)::before {
-    content: "Contact"
-}
+/*.side-nav li:nth-child(5)::before {*/
+/*    content: "Contact"*/
+/*}*/
 
-.side-nav li:nth-child(6)::before {
-    content: "Follow"
-}
+/*.side-nav li:nth-child(6)::before {*/
+/*    content: "Follow"*/
+/*}*/
 
 .side-nav li.is-active {
-    color: #0f33ff;
+    color: #0c0c0c;
     -webkit-transition: color .4s ease-in-out;
     transition: color .4s ease-in-out
 }
 
-.side-nav li.is-active span {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transition: opacity .4s ease-in-out;
-    transition: opacity .4s ease-in-out
-}
+/*.side-nav li.is-active span {*/
+/*    opacity: 1;*/
+/*    visibility: visible;*/
+/*    -webkit-transition: opacity .4s ease-in-out;*/
+/*    transition: opacity .4s ease-in-out*/
+/*}*/
 
-.side-nav li.is-active::before {
-    left: -33px;
-    color: #0c0c0c;
-}
+/*.side-nav li.is-active::before {*/
+/*    left: -33px;*/
+/*    color: #0c0c0c;*/
+/*}*/
 
 .intro {
     position: relative;
