@@ -1,5 +1,17 @@
 // @codekit-prepend "/vendor/hammer-2.0.8.js";
 
+$('#slide > div:gt(0)').hide();
+
+setInterval(function(){
+  $('#slide > div:first')
+      .fadeOut(1000)
+      .next()
+      .fadeIn(1000)
+      .end()
+      .appendTo('#slide');
+},3000);
+
+
 $( document ).ready(function() {
 
   // DOMMouseScroll included for firefox support
@@ -51,15 +63,12 @@ $( document ).ready(function() {
 
   });
 
+
+
   $('.cta').click(function(){
 
-    var curActive = $('.side-nav').find('.is-active'),
-        curPos = $('.side-nav').children().index(curActive),
-        lastItem = $('.side-nav').children().length,
-        nextPos = lastItem;
-
-    updateNavs(lastItem);
-    updateContent(curPos, nextPos, lastItem);
+    updateNavs(0);
+    updateContent(0, 0, 0);
 
   });
 
@@ -287,6 +296,7 @@ $( document ).ready(function() {
     });
 
   }
+
 
   outerNav();
   workSlider();

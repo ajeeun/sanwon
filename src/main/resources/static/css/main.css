@@ -1,3 +1,9 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
 @font-face {
     font-family: 'Montserrat';
     src: url("fonts/Montserrat-Black.eot");
@@ -244,7 +250,7 @@ body {
     background-color: white;
     font-size: 14px;
     line-height: 1.6;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Pretendard", sans-serif;
     color: #0c0c0c;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%
@@ -475,8 +481,8 @@ body {
 .header--logo p {
     /*margin: 0 0 0 10px;*/
     margin-top: 50px;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 300;
     text-transform: uppercase
 }
 
@@ -524,7 +530,7 @@ body {
 .header--cta {
     position: absolute;
     top: 23%;
-    left: 50px;
+    left: 40px;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     padding: 0 20px;
@@ -560,7 +566,8 @@ body {
     opacity: 0;
     visibility: hidden;
     -webkit-transition: opacity .4s ease-in-out, visibility 0s .4s;
-    transition: opacity .4s ease-in-out, visibility 0s .4s
+    transition: opacity .4s ease-in-out, visibility 0s .4s;
+    margin-left: 56px;
 }
 
 .header--cta:focus {
@@ -613,6 +620,11 @@ li {
     /*list-style-position: inside;*/
     z-index: 10
 }
+
+.first{
+    color : #0c0c0c;
+}
+
 
 .side-nav > li {
     position: relative;
@@ -716,6 +728,11 @@ li {
     height: 475px
 }
 
+.intro--banner--b {
+    position: relative;
+    height: 600px
+}
+
 .intro--banner h2 {
     display: block;
     font-size: 1.5em;
@@ -752,8 +769,9 @@ li {
 
 .intro--banner h1 {
     position: relative;
-    font-size: 68px;
-    font-weight: 200;
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 10%;
     line-height: 1;
     z-index: 1
 }
@@ -1893,4 +1911,35 @@ li {
 .outer-nav li.is-vis:nth-child(5) {
     -webkit-transition-delay: .16s;
     transition-delay: .16s
+}
+
+footer {
+    width: 30%;
+    height: 50px;
+    bottom: 0px;
+    position: absolute;
+    margin-left: 82%;
+}
+
+footer p {
+    margin-top: 0; margin-bottom: 0;
+}
+
+footer p span {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#slide {
+    position:relative;
+    width:110%;
+    height:600px;
+    overflow:hidden;
+}
+#slide > div {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
 }

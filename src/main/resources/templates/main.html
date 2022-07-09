@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Global</title>
+    <title>SANWON</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,8 +17,8 @@
 <!-- notification for small viewports and landscape oriented smartphones -->
 <div class="device-notification">
     <a class="device-notification--logo" href="#0">
-        <img src="/img/logo.png" alt="Global">
-        <p>Global</p>
+<!--        <img src="/img/logo.png" alt="sanwon">-->
+<!--        <p>SANWON</p>-->
     </a>
     <p class="device-notification--message">Global has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
 </div>
@@ -29,7 +31,7 @@
                     <a class="header--logo" href="#0">
                         <!--                        <li c class="header&#45;&#45;cta cta"><img src="/img/logo.png" alt="Global"></li>-->
                         <p class="header--cta--b is-active">S A N W O N</p>
-                        <p class="header--cta cta">S A N W O N</p>
+                        <p class="header--cta cta"><img src="/img/logo.png" width="80px;" alt="sanwon"></p>
                     </a>
                     <!--                   <button class="header&#45;&#45;cta cta">Hire Us</button>-->
 <!--                    <div class="header&#45;&#45;nav-toggle">-->
@@ -41,7 +43,7 @@
                         <!--home-->
                         <li class="is-active"></li>
                         <!--                        <span>Works</span>-->
-                        <li></li>
+                        <li><a href="/mainTwo"></a></li>
                         <!--                        <span>About</span>-->
                         <li></li>
                         <!--                        <span>News</span>-->
@@ -50,14 +52,20 @@
                         <li></li>
                         <!--                        <span>Follow</span>-->
                         <li></li>
-
                     </ul>
                 </nav>
+
+
                 <ul class="l-main-content main-content">
                     <li class="l-section section section--is-active">
-                        <div class="intro">
-                            <div class="intro--banner">
-                                <img src="/img/introduction-visual.png" alt="Welcome">
+                        <div class="intro ">
+                            <div class="intro--banner intro--banner--b">
+                                <div id="slide">
+                                    <div><img src="/img/agriculture.jpg" alt=""></div>
+                                    <div><img src="/img/business.jpg" alt=""></div>
+                                    <div><img src="/img/ocean.jpg" alt=""></div>
+                                </div>
+<!--                                <img src="/img/introduction-visual.png" alt="Welcome">-->
                             </div>
                             <!--                            <div class="intro&#45;&#45;options">-->
                             <!--                                <a href="#0">-->
@@ -184,7 +192,9 @@
                     <li class="l-section section">
                         <div class="intro">
                             <div class="intro--banner">
-                                <img src="/img/google.png" alt="Welcome">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.754052704875!2d126.98315481513856!3d37.49012987981225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1baa6b370cb%3A0xcc1001d8f110e2f6!2z7ISc7Jq47Yq567OE7IucIOyEnOy0iOq1rCDrj5nqtJHroZw46ri4IDE2!5e0!3m2!1sko!2skr!4v1657351592415!5m2!1sko!2skr" width="110%" height="430" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!--                                <div id="map" style="width: 100%; height: 400px;"></div>-->
+<!--                                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzSrS9Qr9mtRM4Aur3Hu2-AAzK_JtBvek&callback=initMap&region=kr"></script>-->
                             </div>
                             <div class="intro--options">
                                 <a href="#0">
@@ -365,23 +375,32 @@
 <!--                                <input type="submit" value="Send Request">-->
 <!--                            </form>-->
 <!--                        </div>-->
+                        <footer>
+                            <p>
+                                <span>
+                                    ©Sanwon™ all rights reserved
+                                </span>
+                            </p>
+                        </footer>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    <ul class="outer-nav">
-        <li class="is-active">Home</li>
-        <li>Works</li>
-        <li>About</li>
-        <li>News</li>
-        <li>Contact</li>
-        <li>Follow</li>
-    </ul>
+<!--    <ul class="outer-nav">-->
+<!--        <li class="is-active">Home</li>-->
+<!--        <li>Works</li>-->
+<!--        <li>About</li>-->
+<!--        <li>News</li>-->
+<!--        <li>Contact</li>-->
+<!--        <li>Follow</li>-->
+<!--    </ul>-->
+
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="/js/vendor/jquery-2.2.4.min.js"></script>
 <script src="/js/functions.js"></script>
+<script src="/js/gm.js" defer></script>
 </body>
 </html>
