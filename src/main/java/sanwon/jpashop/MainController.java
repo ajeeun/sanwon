@@ -14,7 +14,7 @@ public class MainController {
     }
 
     @GetMapping("mainTwo")
-    public String main(Model model){
+    public String main(){
         return "mainTwo";
 
     }
