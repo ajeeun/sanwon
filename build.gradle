@@ -5,6 +5,11 @@ plugins {
 	id 'war'
 }
 
+bootWar {
+	archivesBaseName = 'sanwon'
+	archiveFileName = 'ROOT.war'
+}
+
 group = 'sanwon'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'

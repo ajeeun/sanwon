@@ -8,15 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
     @GetMapping("main")
-    public String hello(Model model){
-        model.addAttribute("data","메인화면");
+    public String hello(){
         return "main";
 
     }
 
     @GetMapping("mainTwo")
     public String main(Model model){
-        model.addAttribute("data","메인화면2");
         return "mainTwo";
 
     }
