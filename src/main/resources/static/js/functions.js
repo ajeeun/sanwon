@@ -158,8 +158,9 @@ $( document ).ready(function() {
     }else{
       $('#plus').text('+');
       $('.side-nav').removeClass('section');
-      // $('.side-nav3').addClass('section');
+      $('.side-nav3').addClass('section');
       $('.years').addClass('section');
+      setTimeout($('.side-nav3').attr('style','position: absolute'),10000);
     }
 
   });
