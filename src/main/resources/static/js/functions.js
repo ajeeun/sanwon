@@ -26,7 +26,7 @@ $( document ).ready(function() {
 
       var delta = (e.originalEvent.wheelDelta) ? -e.originalEvent.wheelDelta : e.originalEvent.detail * 20;
 
-      if (delta > 50 && canScroll) {
+      if (delta > 50 && canScroll ) {
         canScroll = false;
         clearTimeout(scrollController);
         scrollController = setTimeout(function(){
@@ -34,7 +34,7 @@ $( document ).ready(function() {
         }, 800);
         updateHelper(1);
       }
-      else if (delta < -50 && canScroll) {
+       if (delta < -50 && canScroll) {
         canScroll = false;
         clearTimeout(scrollController);
         scrollController = setTimeout(function(){
@@ -44,6 +44,7 @@ $( document ).ready(function() {
       }
 
     }
+
 
   });
 
@@ -94,14 +95,14 @@ $( document ).ready(function() {
   //
   // });
 
-  $(document).keyup(function(e){
-
-    if (!($('.outer-nav').hasClass('is-vis'))) {
-      e.preventDefault();
-      updateHelper(e);
-    }
-
-  });
+  // $(document).keyup(function(e){
+  //
+  //   if (!($('.outer-nav').hasClass('is-vis'))) {
+  //     e.preventDefault();
+  //     updateHelper(e);
+  //   }
+  //
+  // });
 
   // determine scroll, swipe, and arrow key direction
   function updateHelper(param) {
@@ -111,22 +112,20 @@ $( document ).ready(function() {
         lastItem = $('.side-nav').children().length-1,
         nextPos = 0;
 
-    if (param.type === "swipeup" || param.keyCode === 40 || param > 0) {
+    if ((param.type === "swipeup" || param.keyCode === 40 || param > 0) && curPos !== 1) {
       if (curPos !== lastItem && curPos !== 0) {
         nextPos = curPos + 1;
         updateNavs(nextPos);
         updateContent(curPos, nextPos, lastItem);
-      }else if ( curPos === 0){
+      } else if (curPos === 0) {
         nextPos = curPos + 2;
         updateNavs(nextPos);
         updateContent(curPos, nextPos, lastItem);
-      }
-      else {
+      } else {
         updateNavs(nextPos);
         updateContent(curPos, nextPos, lastItem);
       }
-    }
-    else if (param.type === "swipedown" || param.keyCode === 38 || param < 0){
+    }else if ((param.type === "swipedown" || param.keyCode === 38 || param < 0) && curPos !== 1){
       if (curPos !== 0 && curPos !== 2){
         nextPos = curPos - 1;
         updateNavs(nextPos);
@@ -141,6 +140,9 @@ $( document ).ready(function() {
         updateNavs(nextPos);
         updateContent(curPos, nextPos, lastItem);
       }
+
+     }else if(curPos === 1){
+
     }
 
   }
@@ -184,6 +186,12 @@ $( document ).ready(function() {
 
 
 
+  //
+  // $('#Works').click(function(){
+  //
+
+  //
+  // });
 
   // sync side and outer navigations
   function updateNavs(nextPos) {
@@ -239,131 +247,5 @@ $( document ).ready(function() {
 
   }
 
-  function outerNav() {
-
-    $('.header--nav-toggle').click(function(){
-
-      $('.perspective').addClass('perspective--modalview');
-      setTimeout(function(){
-        $('.perspective').addClass('effect-rotate-left--animate');
-      }, 25);
-      $('.outer-nav, .outer-nav li, .outer-nav--return').addClass('is-vis');
-
-    });
-
-    $('.outer-nav--return, .outer-nav li').click(function(){
-
-      $('.perspective').removeClass('effect-rotate-left--animate');
-      setTimeout(function(){
-        $('.perspective').removeClass('perspective--modalview');
-      }, 400);
-      $('.outer-nav, .outer-nav li, .outer-nav--return').removeClass('is-vis');
-
-    });
-
-  }
-
-  function workSlider() {
-
-    $('.slider--prev, .slider--next').click(function() {
-
-      var $this = $(this),
-          curLeft = $('.slider').find('.slider--item-left'),
-          curLeftPos = $('.slider').children().index(curLeft),
-          curCenter = $('.slider').find('.slider--item-center'),
-          curCenterPos = $('.slider').children().index(curCenter),
-          curRight = $('.slider').find('.slider--item-right'),
-          curRightPos = $('.slider').children().index(curRight),
-          totalWorks = $('.slider').children().length,
-          $left = $('.slider--item-left'),
-          $center = $('.slider--item-center'),
-          $right = $('.slider--item-right'),
-          $item = $('.slider--item');
-
-      $('.slider').animate({ opacity : 0 }, 400);
-
-      setTimeout(function(){
-
-      if ($this.hasClass('slider--next')) {
-        if (curLeftPos < totalWorks - 1 && curCenterPos < totalWorks - 1 && curRightPos < totalWorks - 1) {
-          $left.removeClass('slider--item-left').next().addClass('slider--item-left');
-          $center.removeClass('slider--item-center').next().addClass('slider--item-center');
-          $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-        }
-        else {
-          if (curLeftPos === totalWorks - 1) {
-            $item.removeClass('slider--item-left').first().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').next().addClass('slider--item-center');
-            $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-          }
-          else if (curCenterPos === totalWorks - 1) {
-            $left.removeClass('slider--item-left').next().addClass('slider--item-left');
-            $item.removeClass('slider--item-center').first().addClass('slider--item-center');
-            $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-          }
-          else {
-            $left.removeClass('slider--item-left').next().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').next().addClass('slider--item-center');
-            $item.removeClass('slider--item-right').first().addClass('slider--item-right');
-          }
-        }
-      }
-      else {
-        if (curLeftPos !== 0 && curCenterPos !== 0 && curRightPos !== 0) {
-          $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
-          $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
-          $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
-        }
-        else {
-          if (curLeftPos === 0) {
-            $item.removeClass('slider--item-left').last().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
-            $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
-          }
-          else if (curCenterPos === 0) {
-            $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
-            $item.removeClass('slider--item-center').last().addClass('slider--item-center');
-            $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
-          }
-          else {
-            $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
-            $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
-            $item.removeClass('slider--item-right').last().addClass('slider--item-right');
-          }
-        }
-      }
-
-    }, 400);
-
-    $('.slider').animate({ opacity : 1 }, 400);
-
-    });
-
-  }
-
-  function transitionLabels() {
-
-    $('.work-request--information input').focusout(function(){
-
-      var textVal = $(this).val();
-
-      if (textVal === "") {
-        $(this).removeClass('has-value');
-      }
-      else {
-        $(this).addClass('has-value');
-      }
-
-      // correct mobile device window position
-      window.scrollTo(0, 0);
-
-    });
-
-  }
-
-
-  outerNav();
-  workSlider();
-  transitionLabels();
-
 });
+
